@@ -18,7 +18,7 @@ import { Copy, MoveRight, ShoppingBasket, Smile } from 'lucide-react';
 function App() {
   return (
     <>
-      <nav className='px-12 py-4 flex justify-between items-center'>
+      <nav className='hidden px-12 py-4 lg:flex justify-between items-center'>
         <div className='flex items-center gap-4'>
           <div className='relative rounded-full'>
             <img
@@ -26,13 +26,6 @@ function App() {
               alt='Sui Animal Farm Logo'
               className='rounded-full h-10 border border-t-[#652D3E] border-l-[#C4A17C] border-r-[#FFE46C] border-b-[#F5C779]'
             />
-            {/*  box-sizing: border-box; position: absolute; width:
-            38px; height: 38px; left: 38px; top: 38px; border: 1.11765px solid
-            #652D3E; transform: rotate(-180deg); */}
-            {/* <span className='absolute w-full h-full rounded-full border border-t-[#652D3E] top-0' />
-            <span className='absolute w-full h-full rounded-full border border-l-[#C4A17C] border-transparent -left-1 top-0' />
-            <span className='absolute w-full h-full rounded-full border border-r-[#FFE46C] border-transparent left-1 top-0' />
-            <span className='absolute w-full h-full rounded-full border border-b-[#F5C779] border-transparent top-1' /> */}
           </div>
           <div>
             <p className='text-2xl font-bold'>Sui Meme</p>
@@ -63,6 +56,24 @@ function App() {
           <Button className='rounded-full'>Explore</Button>
         </div>
       </nav>
+      <nav className='lg:hidden'>
+        <div className='flex justify-between items-center px-4 py-2'>
+          <div className='relative rounded-full'>
+            <img
+              src={logo}
+              alt='Sui Animal Farm Logo'
+              className='rounded-full h-10 border border-t-[#652D3E] border-l-[#C4A17C] border-r-[#FFE46C] border-b-[#F5C779]'
+            />
+          </div>
+          <a href='/' className='text-[#4CDA68]'>
+            Homepage
+          </a>
+          <div className='flex gap-4'>
+            <img src={X} alt='X icon' />
+            <img src={Telegram} alt='X icon' />
+          </div>
+        </div>
+      </nav>
       <main className='flex flex-col gap-16'>
         <section
           className='relative w-screen flex justify-center items-center overflow-x-clip'
@@ -71,27 +82,27 @@ function App() {
           }}
         >
           <img
-            className='absolute w-[256px] rotate-[120deg] -left-20 -top-20'
+            className='absolute w-[128px] lg:w-[256px] rotate-[120deg] lg:-left-20 lg:-top-20 -left-7 -top-5'
             src={Bartho}
             alt='Bartholomew'
           />
           <img
-            className='absolute w-[256px] rotate-[-120deg] -right-20 -top-20'
+            className='absolute w-[128px] lg:w-[256px] rotate-[-120deg] lg:-right-20 lg:-top-20 -right-7 -top-5'
             src={Pippy}
             alt='Pippy'
           />
           <img
-            className='absolute w-[256px] rotate-[60deg] -left-20 bottom-0'
+            className='absolute w-[128px] lg:w-[256px] rotate-[60deg] lg:-left-20 bottom-0 -left-8'
             src={Yuta}
             alt='Yuta'
           />
           <img
-            className='absolute w-[256px] rotate-[-60deg] -right-20 bottom-0'
+            className='absolute w-[128px] lg:w-[256px] rotate-[-60deg] lg:-right-20 -right-5 bottom-0'
             src={Luna}
             alt='Luna'
           />
-          <div className='text-center max-w-[40%]'>
-            <h1 className='text-6xl font-bold'>
+          <div className='text-center lg:max-w-[40%] flex flex-col gap-4 items-center'>
+            <h1 className='text-5xl lg:text-6xl font-bold'>
               Landing Page is <span className='text-[#4CDA68]'>here</span>
             </h1>
             <p>
@@ -100,7 +111,7 @@ function App() {
               hendrerit pretium luctus.
             </p>
             <Button
-              className='text-3xl rounded-full bg-[#4CDA68] p-8 hover:bg-[#5ac26f]'
+              className='w-[70%] text-2xl lg:text-3xl rounded-full bg-[#4CDA68] p-8 hover:bg-[#5ac26f]'
               style={{
                 boxShadow: '-4px 8px 0px rgba(76, 218, 104, 0.25)',
               }}
@@ -114,7 +125,7 @@ function App() {
         <section className='flex flex-col items-center gap-6'>
           <img src={Pippy} alt='Pippy' className='w-[128px]' />
           <h2 className='text-5xl font-semibold'>Introduction</h2>
-          <div className='grid grid-cols-3 grid-rows-2 w-[55%] h-[560px] gap-8'>
+          <div className='flex flex-col lg:grid lg:grid-cols-3 lg:grid-rows-2 lg:h-[580px] lg:w-[55%] gap-8'>
             <div className='row-span-2 bg-[#FDDEA9] flex flex-col justify-between rounded-3xl overflow-hidden'>
               <div className='p-3 flex flex-col gap-2'>
                 <h3 className='text-lg bg-white py-2 px-4 w-fit rounded-full'>
@@ -137,7 +148,7 @@ function App() {
                 <h3 className='text-lg bg-white text-[#113264] py-2 px-4 w-fit rounded-full'>
                   Headline
                 </h3>
-                <p className='text-[#113264] text-4xl font-medium'>
+                <p className='text-[#113264] text-3xl lg:text-4xl font-medium'>
                   Advertisement Headline will be here, longer or more longer
                 </p>
               </div>
@@ -155,7 +166,7 @@ function App() {
                   <h3 className='text-lg bg-black py-2 px-4 w-fit rounded-full text-white'>
                     Headline
                   </h3>
-                  <p className='text-2xl font-medium'>
+                  <p className='text-xl lg:text-2xl font-medium'>
                     Advertisement Headline will be here
                   </p>
                 </div>
@@ -171,7 +182,7 @@ function App() {
                   <h3 className='text-lg bg-black py-2 px-4 w-fit rounded-full text-white'>
                     Headline
                   </h3>
-                  <p className='text-2xl font-medium'>
+                  <p className='text-xl lg:text-2xl font-medium'>
                     Advertisement Headline will be here
                   </p>
                 </div>
@@ -181,47 +192,61 @@ function App() {
         </section>
         <section className='flex flex-col items-center gap-8'>
           <img src={Yuta} alt='Yuta' className='w-[128px]' />
-          <h3 className='text-5xl font-semibold'>
+          <h3 className='text-4xl lg:text-5xl font-semibold'>
             How to{' '}
             <span className='bg-[#29F852] text-white rounded-xl px-4'>
               buy?
             </span>
           </h3>
-          <div className='flex justify-between items-center w-1/2'>
+          <div className='flex justify-between items-center w-full lg:w-1/2 px-4'>
             <div>
-              <p className='text-xl text-[#838383]'>Subtitle for extra in4</p>
-              <h4 className='text-3xl'>First work is here</h4>
+              <p className='text-lg lg:text-xl text-[#838383]'>
+                Subtitle for extra in4
+              </p>
+              <h4 className='text-2xl lg:text-3xl'>First work is here</h4>
               <p>First step</p>
               <p>Second step</p>
               <p>Third step</p>
               <p>Fourth step</p>
             </div>
-            <img src={Bartho} alt='Bartholomew' className='w-[256px]' />
+            <img
+              src={Bartho}
+              alt='Bartholomew'
+              className='w-[128px] lg:w-[256px]'
+            />
           </div>
-          <div className='flex flex-row-reverse justify-between items-center w-1/2'>
+          <div className='flex flex-row-reverse gap-4 justify-between items-center lg:w-1/2'>
             <div>
-              <p className='text-xl text-[#838383]'>Subtitle for extra in4</p>
-              <h4 className='text-3xl'>First work is here</h4>
+              <p className='text-lg lg:text-xl text-[#838383]'>
+                Subtitle for extra in4
+              </p>
+              <h4 className='text-2xl lg:text-3xl'>First work is here</h4>
               <p>First step</p>
               <p>Second step</p>
               <p>Third step</p>
               <p>Fourth step</p>
             </div>
-            <img src={Luna} alt='Bartholomew' className='w-[256px]' />
+            <img
+              src={Luna}
+              alt='Bartholomew'
+              className='w-[128px] lg:w-[256px]'
+            />
           </div>
         </section>
-        <section className='relative h-[60vh] pt-10 flex flex-col gap-10 items-center bg-[#AADDD3]'>
+        <section className='relative h-[60vh] pt-10 flex flex-col gap-10 items-center bg-[#AADDD3] -z-20'>
           <img
             src={GreenCandle}
             alt='To the moooooooon'
-            className='absolute w-[500px] top-10 right-0'
+            className='absolute lg:w-[500px] w-[250px] lg:top-10 right-0 bottom-0 -z-10'
           />
           <img src={Pippy} alt='Pippy' className='w-[128px]' />
-          <h3 className='text-[#202020] text-6xl font-semibold'>
+          <h3 className='text-[#202020] text-4xl lg:text-6xl font-semibold'>
             Contract Address
           </h3>
-          <div className='flex border-4 gap-4 px-4 bg-[#6DC5B4] text-white border-white rounded-full items-center justify-center'>
-            <p>0xAA2A92059a9134d21D832AA2A92059a9134d21D832</p>
+          <div className='max-w-full flex border-4 gap-4 px-4 bg-[#6DC5B4] text-white border-white rounded-full items-center justify-center'>
+            <p className='truncate w-[80%]'>
+              0xAA2A92059a9134d21D832AA2A92059a9134d21D832aaaaaaaaaaa
+            </p>
             <Button variant='ghost' className='p-0 hover:bg-transparent'>
               <Copy />
             </Button>
@@ -239,8 +264,8 @@ function App() {
             alt='Luna'
             className='w-[128px] border-[6px] border-b-[#FDB58B] border-transparent'
           />
-          <h2 className='text-5xl font-semibold'>Tokenomic</h2>
-          <div className='grid grid-cols-2 grid-rows-2 max-w-[50%] gap-8'>
+          <h2 className='text-4xl lg:text-5xl font-semibold'>Tokenomic</h2>
+          <div className='flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-2 w-full lg:max-w-[50%] gap-8'>
             <div
               className='rounded-3xl text-center flex gap-4 flex-col justify-between items-center bg-[#FEEA4B] py-8 px-'
               style={{
@@ -310,22 +335,22 @@ function App() {
           <h3 className='text-5xl font-semibold mb-20'>
             ROAD<span className='text-[#4CDA68]'>MAP</span>
           </h3>
-          <div className='relative w-3/4 h-2 bg-[#B2B2B2] rounded-full'>
-            <div className='absolute -top-[60px] left-[10%] flex flex-col items-center gap-2'>
+          <div className='relative w-full lg:w-3/4 h-2 bg-[#B2B2B2] rounded-full'>
+            <div className='absolute -top-[60px] lg:left-[10%] flex flex-col items-center gap-2'>
               <p className='bg-black rounded-full text-white flex items-center gap-2 px-4 py-2'>
                 <Smile />
                 Extra data
               </p>
               <div className='w-1 h-8 rounded-full bg-black' />
             </div>
-            <div className='absolute -top-[10px] left-[40%] flex flex-col items-center gap-2'>
+            <div className='absolute -top-[10px] left-[30%] lg:left-[40%] flex flex-col items-center gap-2'>
               <div className='w-1 h-8 rounded-full bg-black' />
               <p className='bg-black rounded-full text-white flex items-center gap-2 px-4 py-2'>
                 <Smile />
                 Extra data
               </p>
             </div>
-            <div className='absolute -top-[60px] left-[80%] flex flex-col items-center gap-2'>
+            <div className='absolute -top-[60px] left-[60%] lg:left-[80%] flex flex-col items-center gap-2'>
               <p className='bg-black rounded-full text-white flex items-center gap-2 px-4 py-2'>
                 <Smile />
                 Extra data
@@ -340,7 +365,6 @@ function App() {
             alt='Banner'
             className='w-full h-[150px] object-cover'
           />
-          <div></div>
         </section>
       </main>
     </>
